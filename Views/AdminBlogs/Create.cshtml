@@ -1,0 +1,51 @@
+﻿@model MvcCoreIdentityDemo.ViewModels.BlogCreateViewModel
+
+<section class="content-header">
+    <div class="container-fluid">
+        <h1>@(ViewBag.BlogId != null ? "Edit Blog" : "Create Blog")</h1>
+    </div>
+</section>
+
+<section class="content">
+    <div class="card card-primary">
+        <form asp-action="@(ViewBag.BlogId != null ? "Edit" : "Create")"
+              asp-route-id="@ViewBag.BlogId" enctype="multipart/form-data">
+            <div class="card-body">
+                <div class="form-group">
+                    <label asp-for="Title">Blog Title</label>
+                    <input asp-for="Title" class="form-control" placeholder="Enter title">
+                </div>
+                <div class="form-group">
+                    <label asp-for="Summary">Short Summary</label>
+                    <input asp-for="Summary" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label asp-for="Description">Content</label>
+                    <textarea asp-for="Description" id="summernote" class="form-control" rows="6"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Gallery Images</label>
+                    <div class="custom-file">
+                        <input type="file" asp-for="GalleryImages" class="custom-file-input" multiple>
+                        <label class="custom-file-label">Choose files</label>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer text-right">
+                <a asp-action="Index" class="btn btn-default">Cancel</a>
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+
+@section Scripts {
+    <script>
+        // Custom File Input Display
+        $('.custom-file-input').on('change', function() {
+            var fileName = $(this).val().split('\\').pop();
+            $(this).next('.custom-file-label').html(fileName || "Choose files");
+        });
+    </script>
+}

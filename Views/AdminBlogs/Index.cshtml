@@ -1,0 +1,59 @@
+﻿@model IEnumerable<MvcCoreIdentityDemo.Models.Blog>
+@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "Admin | Blogs";
+}
+
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6"><h1 class="m-0">Manage Blogs</h1></div>
+            <div class="col-sm-6 text-right">
+                <a asp-action="Create" class="btn btn-primary"><i class="fas fa-plus"></i> Create New</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="content">
+    <div class="card card-outline card-primary">
+        <div class="card-body p-0">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Thumbnail</th>
+                        <th>Title</th>
+                        <th>Created At</th>
+                        <th style="width: 150px">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                <img src="@(item.Images.FirstOrDefault()?.ImagePath ?? "/dist/img/no-image.png")"
+                                     class="img-size-50" style="object-fit: cover; height: 40px; width: 40px;">
+                            </td>
+                            <td><b>@item.Title</b><br /><small>@item.Summary</small></td>
+                            <td>@item.CreatedAt.ToShortDateString()</td>
+                            <td>
+                                <div class="btn-group">
+                                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-info">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <form asp-action="Delete" asp-route-id="@item.Id" method="post"
+                                          onsubmit="return confirm('Permanently delete this blog?');">
+                                        <button type="submit" class="btn btn-sm btn-danger ml-1">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>

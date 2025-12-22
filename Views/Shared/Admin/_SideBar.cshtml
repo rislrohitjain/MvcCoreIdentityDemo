@@ -1,0 +1,49 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+
+    <a class="brand-link" asp-controller="Home" asp-action="Dashboard">
+        <span class="brand-text font-weight-light">MvcCoreIdentityDemo</span>
+     </a>
+
+    <div class="sidebar">
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+                <img src="https://adminlte.io/themes/v3/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+            </div>
+            <div class="info"> 
+                <a class="d-block" asp-area="Identity" asp-page="/Account/Manage/Index"> <p>Profile</p></a>
+            </div>
+        </div>
+
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu">
+                @if (SignInManager.IsSignedIn(User))
+                {
+                    <li class="nav-item">
+                        <a class="nav-link active" asp-controller="Home" asp-action="Dashboard">
+                            <i class="nav-icon fas fa-tachometer-alt"></i> <p>Dashboard</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="AdminBlogs" asp-action="Index">
+                            <i class="nav-icon fas fa-blog"></i> <p>Blogs</p>
+                        </a>
+                    </li>
+                    <li class="nav-header">ACCOUNT</li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="Identity" asp-page="/Account/Manage/Index"><i class="nav-icon fas fa-user"></i> <p>Profile</p></a>
+                    </li>
+
+                }
+                else
+                {
+                    <li class="nav-item">
+                        <a href="/Account/Login" class="nav-link"><i class="nav-icon fas fa-sign-in-alt"></i> <p>Login</p></a>
+                    </li>
+                }
+            </ul>
+        </nav>
+    </div>
+</aside>

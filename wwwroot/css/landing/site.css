@@ -1,0 +1,295 @@
+/* Custom Fonts */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0d0d14; /* Darkest background */
+    color: #e0e0e0; /* Light grey text */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif; /* Keep headings consistent */
+    color: #f8f9fa; /* Lighter white for headings */
+}
+
+.text-primary {
+    color: #007bff !important; /* Standard Bootstrap primary */
+}
+
+.text-primary-light {
+    color: #4dc2ff !important; /* A slightly lighter blue for emphasis */
+}
+
+.bg-dark-gradient {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}
+
+.bg-primary-gradient {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+}
+
+.text-dark-blue {
+    color: #2c3e50; /* For card titles on lighter backgrounds */
+}
+
+/* Navbar Customization */
+.custom-navbar {
+    background-color: rgba(13, 13, 20, 0.8); /* Semi-transparent dark background */
+    backdrop-filter: blur(10px); /* Glassmorphism effect */
+    -webkit-backdrop-filter: blur(10px); /* For Safari */    
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-brand {
+    color: #f8f9fa !important;
+    font-size: 1.5rem;
+}
+
+.nav-link {
+    color: #e0e0e0 !important;
+    transition: color 0.3s ease;
+}
+
+    .nav-link:hover, .nav-link.active {
+        color: #4dc2ff !important; /* Lighter primary on hover/active */
+    }
+
+.navbar-toggler-icon {
+    filter: invert(1); /* Makes the toggler icon white */
+}
+
+/* Hero Section */
+.hero-section {
+    background: url('/img/hero-background.png') no-repeat center center / cover; /* Replace with your own hero background image */
+    min-height: 90vh; /* Adjust as needed */
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-top: 5rem; /* Space for fixed navbar */
+}
+
+.hero-background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(13, 13, 20, 0.7); /* Dark overlay for text readability */
+    z-index: 0;
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+}
+
+.hero-section .lead {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    transition: all 0.3s ease;
+}
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
+    }
+
+.btn-outline-light {
+    color: #f8f9fa;
+    border-color: #f8f9fa;
+    transition: all 0.3s ease;
+}
+
+    .btn-outline-light:hover {
+        background-color: #f8f9fa;
+        color: #0d0d14;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+    }
+
+.custom-btn-outline-light {
+    border-width: 2px; /* Thicker border for contrast */
+}
+
+/* About Section */
+.about-img {
+    width: 300px; /* Adjust size as needed */
+    height: 300px;
+    object-fit: cover;
+    border: 5px solid #007bff;
+    animation: pulseBorder 2s infinite alternate;
+}
+
+@keyframes pulseBorder {
+    from {
+        border-color: #007bff;
+        box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.4);
+    }
+
+    to {
+        border-color: #4dc2ff;
+        box-shadow: 0 0 0 10px rgba(0, 123, 255, 0);
+    }
+}
+
+
+/* Skill Cards & Blog Cards */
+.skill-card, .blog-card, .work-card {
+    background-color: #1a1a2e; /* Darker background for cards */
+    color: #e0e0e0;
+    border: 1px solid #2e2e4a; /* Subtle border */
+    transition: all 0.3s ease;
+    position: relative; /* For stretched link */
+    overflow: hidden; /* For rounded corners on image */
+}
+
+    .skill-card:hover, .blog-card:hover, .work-card:hover {
+        transform: translateY(-10px); /* Lift effect */
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 0 0 0 5px rgba(0, 123, 255, 0.3); /* Stronger shadow with blue glow */
+        border-color: #4dc2ff;
+    }
+
+    .skill-card i {
+        font-size: 3.5rem; /* Larger icons */
+        color: #4dc2ff; /* Primary light color */
+    }
+
+.blog-img, .work-img {
+    height: 200px; /* Fixed height for consistency */
+    object-fit: cover;
+    width: 100%;
+}
+
+.work-card .col-md-5 img { /* Specific for work cards */
+    height: 100%;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: inherit;
+}
+
+.blog-card .card-body, .work-card .card-body {
+    background-color: #f8f9fa; /* Lighter background for text contrast */
+    color: #343a40;
+}
+
+.blog-card .card-title, .work-card .card-title {
+    color: #2c3e50;
+}
+
+.blog-card .badge, .work-card .badge {
+    background-color: #007bff !important;
+    color: #fff !important;
+}
+
+.blog-card .stretched-link, .work-card .stretched-link {
+    color: #007bff !important;
+}
+
+/* Footer Customization */
+.custom-footer {
+    background-color: #1a1a2e; /* Darker footer */
+    color: #e0e0e0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+    .custom-footer a {
+        color: #e0e0e0;
+        transition: color 0.3s ease;
+    }
+
+        .custom-footer a:hover {
+            color: #4dc2ff;
+        }
+
+/* Lottie Animation Styling */
+.tech-animation-container {
+    height: 200px; /* Adjust height as needed */
+    margin: 10px auto;
+    max-width: 1000px;
+    opacity: 0.7; /* Make it subtle */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-section .lead {
+        font-size: 1rem;
+    }
+
+    .about-img {
+        width: 200px;
+        height: 200px;
+        margin-bottom: 2rem;
+    }
+
+    .work-card .row.g-0 {
+        flex-direction: column; /* Stack image and text on small screens */
+    }
+
+    .work-card .col-md-5, .work-card .col-md-7 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+        .work-card .col-md-5 img {
+            border-radius: 0.25rem 0.25rem 0 0 !important; /* Adjust image border radius */
+            height: 250px; /* Ensure image height for stacking */
+        }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 70vh;
+    }
+
+        .hero-section h1 {
+            font-size: 2rem;
+        }
+
+        .hero-section .lead {
+            font-size: 0.9rem;
+        }
+
+    .tech-animation-container {
+        height: 150px;
+    }
+}
+
+
+#btn-back-to-top {
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    line-height: 50px;
+    text-align: center;
+    transition: opacity 0.3s ease-in-out, transform 0.2s ease;
+}
+
+#btn-back-to-top:hover {
+    transform: scale(1.1);
+}
+ 
+.tech-animation-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 200px; /* Adjust as needed */
+}
+
+.bg-video {
+    object-fit: cover; /* Ensures video fills the container like a background */
+} 

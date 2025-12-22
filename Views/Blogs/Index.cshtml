@@ -1,0 +1,109 @@
+﻿@{
+    Layout = "_FrontLayout";
+    ViewData["Title"] = "Rohit Jain Development & Architecture ";
+}
+@model IEnumerable<Blog>
+
+     
+<section id="blogs" class="py-5 bg-dark-gradient text-white">
+    <div class="container">
+        <h2 class="display-5 fw-bold text-center mb-5 text-primary-light">Latest Insights & Deep Dives</h2>
+        <div class="row g-4 justify-content-center">
+            @foreach (var item in Model)
+            {
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="blog-card hover-up card h-100 border-0 shadow-lg">
+
+
+                        @if (item.Images != null && item.Images.Any())
+                        {
+                            @for (int i = 0; i < item.Images.Count; i++)
+                            {
+                                <div class="carousel-item @(i == 0 ? "active" : "")">
+                                    <img src="@item.Images[i].ImagePath" 
+                                         class="card-img-top blog-img" 
+                                         style="height:100px; object-fit:cover;"
+                                         onerror="this.src='/images/default-placeholder.png';">
+                                </div>
+                            }
+                        }
+                        else
+                        {
+                            <div class="carousel-item active">
+                                <img src="/img/blog-microservices.png" 
+                                     class="card-img-top blog-img" 
+                                     style="height:100px; object-fit:cover;" 
+                                     alt="Default Image">
+                            </div>
+                        }
+
+                         <div class="card-body">
+                            <span class="badge bg-secondary text-white rounded-pill mb-2">
+                                
+                                
+                                 @(item.Title?.Length > 20 
+                                    ? item.Title.Substring(0, 20) + "..." 
+                                    : item.Title) </span>
+                            <h5 class="card-title fw-bold text-dark-blue">
+                                
+                                @(item.Summary?.Length > 20 
+                                    ? item.Summary.Substring(0, 20) + "..." 
+                                    : item.Summary)
+                                     </h5>
+                            <p class="card-text text-muted">
+                                @(item.Description?.Length > 100 
+                                    ? item.Description.Substring(0, 100) + "..." 
+                                    : item.Description)
+                            </p>
+                            <a href="#" class="stretched-link text-decoration-none text-primary fw-bold">Read Article <i class="bi bi-arrow-right"></i></a>
+                             
+                            @* <div class="rating-container mt-3">
+                                <p class="mb-1"><strong>Rate this blog:</strong></p>
+                                <form asp-action="AddRating" method="post" class="star-rating-form">
+                                    <input type="hidden" name="blogId" value="@item.Id" />
+
+                                    <div class="star-group" data-blog-id="@item.Id">
+                                        @for (int i = 5; i >= 1; i--)
+                                        {
+                                            <input type="radio" id="star-@item.Id-@i" name="stars" value="@i" required />
+                                            <label for="star-@item.Id-@i">★</label>
+                                        }
+                                    </div>
+                                    <button type="submit" class="btn btn-sm btn-primary mt-1">Submit Rating</button>
+                                </form>
+
+                                <div class="current-rating mt-1">
+                                    <small class="text-muted">
+                                        Average: @(item.Ratings.Any() ? item.Ratings.Average(r => r.Stars).ToString("0.0") : "0") / 5
+                                        (@item.Ratings.Count votes)
+                                    </small>
+                                </div>
+                            </div> *@
+
+                        </div>
+                    </div>
+                </div>
+
+            }
+            <div class="text-center mt-5">
+                <nav>
+                    <ul class="pagination">
+                        @for (int i = 1; i <= ViewBag.TotalPages; i++)
+                        {
+                            <li class="page-item @(i == ViewBag.CurrentPage ? "active" : "")">
+                                <a class="page-link" href="?page=@i">@i</a>
+                            </li>
+                        }
+                    </ul>
+                </nav>
+            </div>
+        </div> 
+    </div>
+</section>
+
+
+
+
+
+

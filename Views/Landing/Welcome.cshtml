@@ -1,0 +1,364 @@
+﻿@{
+    Layout = "_LandingLayout";
+    ViewData["Title"] = "Rohit Jain Development & Architecture ";
+}
+@model IEnumerable<Blog>
+
+
+
+<section class="hero-section text-white py-5 position-relative d-flex align-items-center">
+    <div class="hero-background-overlay"></div>
+    <div class="container text-center position-relative z-1">
+        <span class="badge bg-primary text-white rounded-pill px-3 py-2 mb-3 animate__animated animate__fadeInDown">
+            Sr. Staff Engineer | Enterprise Solutions Architect (.NET & PHP)
+        </span>
+        <h1 class="display-3 fw-bold mb-4 animate__animated animate__fadeInUp">
+            Engineering Robust Solutions <br /> in <span class="text-primary-light">Jaipur, India</span>
+        </h1>
+        <p class="lead mb-5 opacity-75 animate__animated animate__fadeInUp animate__delay-1s">
+            Driving innovation with PHP,.NET 8, Web APIs, Microservices, and Cloud Architecture.
+            <br />Sharing insights and expertise to empower developers.
+        </p>
+        <div class="d-grid gap-3 d-sm-flex justify-content-sm-center animate__animated animate__fadeInUp animate__delay-2s">
+            <a href="#blogs" class="btn btn-primary btn-lg px-4 py-2 me-sm-3">Explore My Blog <i class="bi bi-arrow-right-short"></i></a>
+            <a href="#work" class="btn btn-outline-light btn-lg px-4 py-2">View My Work <i class="bi bi-briefcase"></i></a>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="py-5 bg-dark text-white">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                
+                <small class="d-block text-center mt-2 text-muted">
+                    <img src="/img/profile-placeholder.jpg" class="img-fluid rounded-circle shadow-lg about-img" alt="Rohit Jain - Senior Software Engineer" />                    
+                    
+                    <br />
+                    Architectural Excellence: I am a firm believer in Clean Architecture, SOLID principles, and Domain-Driven Design (DDD).
+
+                    Performance First: If it’s not fast, it’s not finished. I specialize in optimizing middleware, SQL performance tuning, and efficient caching strategies.
+
+                    Mentorship & Community: I am passionate about elevating the local dev community in Jaipur. Mentoring junior developers and conducting code reviews are just as important to me as the deployment itself.
+                </small>
+            </div>
+            <div class="col-lg-6">
+                <h2 class="display-5 fw-bold mb-4 text-primary-light">About Me</h2>
+                <p class="lead mb-3">
+                    Hi, I'm Rohit Jain, a seasoned Senior Software Engineer based in the vibrant city of Jaipur, India.
+                    With over X years of experience, I specialize in architecting and developing high-performance,
+                    scalable web applications and APIs using the latest Microsoft technologies, primarily .NET.
+                </p>
+                <p class="mb-4">
+                    My passion lies in crafting clean code, designing resilient systems, and mentoring junior developers.
+                    I believe in continuous learning and sharing knowledge, which is why I maintain this blog to
+                    document my insights and discoveries in the ever-evolving world of software development.
+                </p>
+                <a href="#contact" class="btn btn-outline-primary btn-lg">Let's Connect <i class="bi bi-send"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="expertise" class="py-5 bg-black text-white">
+    <div class="container text-center">
+        <h2 class="display-5 fw-bold mb-5 text-primary-light">My Core Expertise</h2>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+            <div class="col">
+                <div class="skill-card hover-up p-4 rounded-3 shadow border border-secondary">
+                    <i class="bi bi-code-square text-primary fs-1 mb-3"></i>
+                    <h5 class="fw-bold">Full-Stack Dev</h5>
+                    <p class="text-muted small">Expertise in PHP (Laravel, CakePHP, Yii) & .NET Core applications.</p>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="skill-card hover-up p-4 rounded-3 shadow border border-secondary">
+                    <i class="bi bi-shield-lock text-primary fs-1 mb-3"></i>
+                    <h5 class="fw-bold">Secure API Integration</h5>
+                    <p class="text-muted small">Implementing High Court & E-Court APIs with advanced encryption.</p>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="skill-card hover-up p-4 rounded-3 shadow border border-secondary">
+                    <i class="bi bi-bank text-primary fs-1 mb-3"></i>
+                    <h5 class="fw-bold">GovTech Solutions</h5>
+                    <p class="text-muted small">Developing large-scale systems like RSOS, PSSST, and Paramedical portals.</p>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="skill-card hover-up p-4 rounded-3 shadow border border-secondary">
+                    <i class="bi bi-graph-up-arrow text-primary fs-1 mb-3"></i>
+                    <h5 class="fw-bold">BI & Data Analytics</h5>
+                    <p class="text-muted small">Designing drill-down dashboards using Pentaho and custom reporting tools.</p>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="skill-card hover-up p-4 rounded-3 shadow border border-secondary">
+                    <i class="bi bi-layers text-primary fs-1 mb-3"></i>
+                    <h5 class="fw-bold">Modern Frontend</h5>
+                    <p class="text-muted small">Crafting interactive UIs with Angular, React, and Bootstrap 5.</p>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="skill-card hover-up p-4 rounded-3 shadow border border-secondary">
+                    <i class="bi bi-kanban text-primary fs-1 mb-3"></i>
+                    <h5 class="fw-bold">Project Management</h5>
+                    <p class="text-muted small">Leading SDLC phases from requirement gathering to final deployment.</p>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="skill-card hover-up p-4 rounded-3 shadow border border-secondary">
+                    <i class="bi bi-wordpress text-primary fs-1 mb-3"></i>
+                    <h5 class="fw-bold">CMS Architecture</h5>
+                    <p class="text-muted small">Customizing WordPress and Drupal for dynamic content management.</p>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="skill-card hover-up p-4 rounded-3 shadow border border-secondary">
+                    <i class="bi bi-lightning-charge text-primary fs-1 mb-3"></i>
+                    <h5 class="fw-bold">Performance Tuning</h5>
+                    <p class="text-muted small">Optimizing complex queries and server-side logic for high traffic.</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="skill-card hover-up p-4 rounded-3 shadow">
+                    <i class="bi bi-microsoft text-primary fs-1 mb-3"></i>
+                    <h5 class="fw-bold">.NET 8+ & C#</h5>
+                    <p class="text-muted small">Building modern, high-performance applications.</p>
+                </div>
+            </div>
+
+
+            <div class="col">
+                <div class="skill-card hover-up p-4 rounded-3 shadow">
+                    <i class="bi bi-cloud-fill text-primary fs-1 mb-3"></i>
+                    <h5 class="fw-bold">Cloud Architecture</h5>
+                    <p class="text-muted small">Azure & AWS deployment, scaling, and services.</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="skill-card hover-up p-4 rounded-3 shadow">
+                    <i class="bi bi-boxes text-primary fs-1 mb-3"></i>
+                    <h5 class="fw-bold">Microservices & APIs</h5>
+                    <p class="text-muted small">Designing and implementing robust, scalable APIs.</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="skill-card hover-up p-4 rounded-3 shadow">
+                    <i class="bi bi-database-fill-gear text-primary fs-1 mb-3"></i>
+                    <h5 class="fw-bold">Database & ORM</h5>
+                    <p class="text-muted small">SQL Server, PostgreSQL, Entity Framework Core.</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="skill-card hover-up p-4 rounded-3 shadow">
+                    <i class="bi bi-git text-primary fs-1 mb-3"></i>
+                    <h5 class="fw-bold">DevOps & CI/CD</h5>
+                    <p class="text-muted small">Azure DevOps, GitHub Actions, Docker.</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="skill-card hover-up p-4 rounded-3 shadow">
+                    <i class="bi bi-code-slash text-primary fs-1 mb-3"></i>
+                    <h5 class="fw-bold">Clean Code & DDD</h5>
+                    <p class="text-muted small">Domain-Driven Design, SOLID Principles.</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="skill-card hover-up p-4 rounded-3 shadow">
+                    <i class="bi bi-puzzle-fill text-primary fs-1 mb-3"></i>
+                    <h5 class="fw-bold">Frontend (React/Angular)</h5>
+                    <p class="text-muted small">Integration with modern JS frameworks.</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="skill-card hover-up p-4 rounded-3 shadow">
+                    <i class="bi bi-search text-primary fs-1 mb-3"></i>
+                    <h5 class="fw-bold">Performance Tuning</h5>
+                    <p class="text-muted small">Optimizing applications for speed and efficiency.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+<section id="blogs" class="py-5 bg-dark-gradient text-white">
+    <div class="container">
+        <h2 class="display-5 fw-bold text-center mb-5 text-primary-light">Latest Insights & Deep Dives</h2>
+        <div class="row g-4 justify-content-center">
+            @foreach (var item in Model)
+            {
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="blog-card hover-up card h-100 border-0 shadow-lg">
+
+
+                        @if (item.Images != null && item.Images.Any())
+                        {
+                            @for (int i = 0; i < item.Images.Count; i++)
+                            {
+                                <div class="carousel-item @(i == 0 ? "active" : "")">
+                                    <img src="@item.Images[i].ImagePath" 
+                                         class="card-img-top blog-img" 
+                                         style="height:100px; object-fit:cover;"
+                                         onerror="this.src='/images/default-placeholder.png';">
+                                </div>
+                            }
+                        }
+                        else
+                        {
+                            <div class="carousel-item active">
+                                <img src="/img/blog-microservices.png" 
+                                     class="card-img-top blog-img" 
+                                     style="height:100px; object-fit:cover;" 
+                                     alt="Default Image">
+                            </div>
+                        }
+
+                         <div class="card-body">
+                            <span class="badge bg-secondary text-white rounded-pill mb-2">
+                                
+                                
+                                 @(item.Title?.Length > 20 
+                                    ? item.Title.Substring(0, 20) + "..." 
+                                    : item.Title) </span>
+                            <h5 class="card-title fw-bold text-dark-blue">
+                                
+                                @(item.Summary?.Length > 20 
+                                    ? item.Summary.Substring(0, 20) + "..." 
+                                    : item.Summary)
+                                     </h5>
+                            <p class="card-text text-muted">
+                                @(item.Description?.Length > 100 
+                                    ? item.Description.Substring(0, 100) + "..." 
+                                    : item.Description)
+                            </p>
+                            <a href="#" class="stretched-link text-decoration-none text-primary fw-bold">Read Article <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            }
+        </div>
+        <div class="text-center mt-5"> 
+            <a class="btn btn-primary btn-lg" asp-area="" asp-controller="Blogs" asp-action="Index">View All Blogs <i class="bi bi-arrow-right"></i>
+                </a>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+<section id="work" class="py-5 bg-black text-white">
+    <div class="container">
+        <h2 class="display-5 fw-bold text-center mb-5 text-primary-light">My Recent Work & Projects</h2>
+        <div class="row g-4 justify-content-center">
+
+            <div class="col-lg-6 col-md-8">
+                <div class="work-card card border-0 shadow-lg h-100 hover-up">
+                    <div class="row g-0">
+                        <div class="col-md-5">
+                            <img src="/img/project-ecommerce.jpg" class="img-fluid rounded-start work-img" alt="E-commerce Platform Project" />
+                        </div>
+                        <div class="col-md-7">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold text-dark-blue">High-Volume E-commerce Platform</h5>
+                                <p class="card-text text-muted small">
+                                    Developed a scalable e-commerce solution with microservices, integrating payment gateways and inventory management.
+                                </p>
+                                <span class="badge bg-info text-dark rounded-pill me-2">PHP</span>
+                                <span class="badge bg-info text-dark rounded-pill me-2">.NET 8</span>
+                                <span class="badge bg-info text-dark rounded-pill me-2">API's</span>
+                                <span class="badge bg-info text-dark rounded-pill">Microservices</span>
+                                <a href="#" class="stretched-link text-decoration-none mt-3 d-block text-primary fw-bold">View Case Study <i class="bi bi-box-arrow-up-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-8">
+                <div class="work-card card border-0 shadow-lg h-100 hover-up">
+                    <div class="row g-0">
+                        <div class="col-md-5">
+                            <img src="/img/project-healthcare.jpg" class="img-fluid rounded-start work-img" alt="Healthcare API Project" />
+                        </div>
+                        <div class="col-md-7">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold text-dark-blue">Secure Healthcare Data API</h5>
+                                <p class="card-text text-muted small">
+                                    Architected and built a secure, compliant API for patient data management, adhering to industry standards.
+                                </p>
+                                <span class="badge bg-info text-dark rounded-pill me-2">ASP.NET Core</span>
+                                <span class="badge bg-info text-dark rounded-pill me-2">AWS</span>
+                                <span class="badge bg-info text-dark rounded-pill">Security</span>
+                                <a href="#" class="stretched-link text-decoration-none mt-3 d-block text-primary fw-bold">View Case Study <i class="bi bi-box-arrow-up-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="text-center mt-5">
+            <a href="javascript:void();" class="btn btn-primary btn-lg">View All Projects <i class="bi bi-folder2-open"></i></a>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="py-5 bg-primary-gradient text-white text-center">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h2 class="display-5 fw-bold mb-4">Let's Build Something Exceptional Together</h2>
+                <p class="lead mb-5 opacity-75">
+                    Whether you have a complex architectural challenge, a new project idea, or just want to discuss the latest tech,
+                    feel free to reach out. I'm available for consultations and collaborations.
+                </p>
+
+                 <a class="btn btn-outline-light btn-lg px-5 py-3 custom-btn-outline-light" asp-area="" asp-controller="Contact" asp-action="Index"><i class="bi bi-envelope me-2"></i> Get in Touch</a>
+
+            </div>
+        </div>
+    </div>
+</section>
+ 
+
+<div class="tech-animation-container">
+    <video background="transparent"  width="100%"
+           height="200px;"
+           autoplay
+           loop
+           muted
+           playsinline
+           poster="~/img/fallback-poster.png"
+           class="bg-video">
+        <source src="~/videos/tech-animation.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>

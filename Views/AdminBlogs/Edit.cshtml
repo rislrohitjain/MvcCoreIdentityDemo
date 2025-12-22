@@ -1,0 +1,84 @@
+﻿@model MvcCoreIdentityDemo.ViewModels.BlogCreateViewModel
+@{
+    ViewData["Title"] = "Edit Blog";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/plugins/summernote/summernote-bs4.min.css">
+}
+
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Edit Blog Post</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="card card-info">
+            <div class="card-header">
+                <h3 class="card-title">Blog Details</h3>
+            </div>
+            <form asp-action="Edit" asp-route-id="@ViewContext.RouteData.Values["id"]" method="post" enctype="multipart/form-data">
+                @Html.AntiForgeryToken()
+                <div class="card-body">
+                    <div class="form-group">
+                        <label asp-for="Title"></label>
+                        <input asp-for="Title" class="form-control" placeholder="Enter title">
+                        <span asp-validation-for="Title" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Summary"></label>
+                        <input asp-for="Summary" class="form-control" placeholder="Enter summary">
+                        <span asp-validation-for="Summary" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Description"></label>
+                        <textarea asp-for="Description" id="summernote" class="form-control"></textarea>
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Add More Images to Gallery</label>
+                        <div class="input-group">
+                            <div class="custom-file">
+                                <input type="file" asp-for="GalleryImages" class="custom-file-input" multiple>
+                                <label class="custom-file-label">Choose files</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-info">Update Post</button>
+                    <a asp-action="Index" class="btn btn-default float-right">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <script src="~/plugins/summernote/summernote-bs4.min.js"></script>
+    <script>
+        $(function () {
+            // Initialize Summernote
+            $('#summernote').summernote({
+                height: 300,
+                placeholder: 'Update your blog content...'
+            });
+
+            // Display file name in custom input
+            $('.custom-file-input').on('change', function () {
+                var fileName = $(this).val().split('\\').pop();
+                $(this).next('.custom-file-label').html(fileName);
+            });
+        });
+    </script>
+}
